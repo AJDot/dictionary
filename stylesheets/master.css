@@ -1,0 +1,150 @@
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+  color: #d0bd9d;
+  background: #30504c;
+}
+
+header {
+  text-align: center;
+}
+
+a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d0bd9d;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.app::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+input {
+  font: inherit;
+  font-size: 24px;
+  width: 100%;
+  padding: 20px 10px 0 10px;
+  margin: 0;
+  color: inherit;
+  background: inherit;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #d0bd9d;
+  box-sizing: border-box;
+}
+
+ul.autocomplete-ul {
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+li.autocomplete-ui-choice {
+  padding: 10px 5px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+li.autocomplete-ui-choice + li {
+  border-top: 1px solid #d0bd9d;
+}
+
+li.autocomplete-ui-choice.selected,
+li.autocomplete-ui-choice:hover {
+  color: #cccccc;
+  background: #456964;
+}
+
+li.autocomplete-ui-choice.selected::before,
+li.autocomplete-ui-choice:hover::before {
+  content: ">";
+  float: right;
+  vertical-align: middle;
+}
+
+div.autocomplete-defs {
+  float: right;
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+div.autocomplete-defs h2 {
+  padding: 0;
+  margin: 5px 5px 10px 5px;
+}
+
+div.autocomplete-defs .pronunciation {
+  margin: 5px;
+  vertical-align: middle;
+}
+
+div.autocomplete-defs audio {
+  margin: 5px;
+  vertical-align: middle;
+}
+
+div.autocomplete-defs ul {
+  font-size: 16px;
+}
+
+div.autocomplete-defs h4 {
+  text-decoration: underline;
+}
+
+div.autocomplete-defs h4::after {
+  content: ":";
+}
+
+div.autocomplete-defs dd {
+  padding: 5px;
+  margin: 0;
+}
+
+div.autocomplete-defs .example {
+  font-style: italic;
+}
+
+div.autocomplete-defs .example::before,
+div.autocomplete-defs .example::after {
+  content: '"'
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  background: #d0bd9d;
+  clip-path: polygon(
+  /* points of the outer triangle going counterclockwise */
+  95% 50%, 27.6666% 11%, 27.6666% 89%,
+
+  /* return to the first point of the outer triangle */
+  95% 50%,
+
+  /* points of the inner triangle going clockwise */
+  86% 50%, 32% 81.3333%, 32% 18.6666%,
+
+  /* return to the first point of the inner triangle */
+  86% 50%
+  );
+
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}
