@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="dictionary.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var input = document.querySelector("input");
+        var dictionary = new Dictionary(input, "search/en?regions=us&q=");
+        const anchor = document.getElementById("api-link");
+        switch (API) {
+          case "OX":
+            anchor.setAttribute(
+              "href",
+              "https://developer.oxforddictionaries.com/"
+            );
+            anchor.innerText = "Oxford Dictionaries";
+            break;
+          case "MW":
+            anchor.setAttribute("href", "https://dictionaryapi.com/");
+            anchor.innerText = "Merriam-Webster Dictionary API";
+            break;
+          case "POKE":
+            anchor.setAttribute("href", "https://pokeapi.co/");
+            anchor.innerText = "The RESTful Pokémon API";
+            break;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Dictionary</h1>
+      <p>
+        Made by Alex Henegar. Powered by
+        <a id="api-link" href="#"></a>
+        using pure JavaScript.
+      </p>
+    </header>
+    <div class="app">
+      <input type="text" name="word" value="" placeholder="Search" />
+    </div>
+  </body>
+</html>
